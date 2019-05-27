@@ -1,10 +1,10 @@
 {
-  "devToolsPort": 19005,
+  "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": null,
-  "packagerPid": null,
+  "packagerPort": 19001,
+  "packagerPid": 26540,
   "expoServerNgrokUrl": "https://4v-38i.asafergas.mysurveyapp-1.exp.direct",
   "packagerNgrokUrl": "https://packager.4v-38i.asafergas.mysurveyapp-1.exp.direct",
-  "ngrokPid": 21896,
+  "ngrokPid": 2020,
   "webpackServerPort": null
 }

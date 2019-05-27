@@ -13,6 +13,7 @@ class UpdateLab extends React.Component {
     this.updatestatus.bind(this);
     this.checkifuserex.bind(this);
     this.GoBack.bind(this);
+    this.Inserttoattend.bind(this);
   this.params=this.props.navigation.state.params;
     this.state = {
         labfromDB:'',
@@ -93,7 +94,7 @@ class UpdateLab extends React.Component {
                               .then(res => res.json())
                               .then(response => { })
                               .catch(error => console.warn('Error:', error.message));
-                         
+                              this.Inserttoattend();
                      }
                         
                          })
@@ -115,11 +116,24 @@ class UpdateLab extends React.Component {
                           .then(res => res.json())
                           .then(response => { })
                           .catch(error => console.warn('Error:', error.message));
+                          this.Inserttoattend();
  
                       }
                       GoBack(){
      
                         this.props.navigation.navigate('Home');
+                      }
+                      Inserttoattend(){
+                        fetch('http://proj.ruppin.ac.il/bgroup68/test1/tar4/api/ListofAttend?Lid='+this.state.labfromDB[0].LabId+"&un="+this.state.username+"&LD="+this.state.labfromDB[0].Labdate+"&fc="+this.state.labfromDB[0].Finalcode, {
+                      
+                          method: 'POST',
+                          headers: { "Content-type": "application/json; charset=UTF-8" },
+                          body: JSON.stringify({}),
+                        })
+                          .then(res => res.json())
+                          .then(response => { })
+                          .catch(error => console.warn('Error:', error.message));
+
                       }
     
   render(){
