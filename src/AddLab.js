@@ -8,6 +8,7 @@ class AddLab extends React.Component {
   static navigationOptions = {header:null};
   constructor(props) {
     super(props);
+    this.updatecurrentnum.bind(this);
     this.params = this.props.navigation.state.params.labs
     this.username=this.props.navigation.state.params.username
     //this.checkverif.bind(this);
@@ -40,6 +41,19 @@ class AddLab extends React.Component {
       componentDidMount() 
       {
         
+                }
+ updatecurrentnum(){
+
+  fetch('http://proj.ruppin.ac.il/bgroup68/test1/tar4/api/addstudenttocounter?lid='+this.params.LabId, {
+                
+    method: 'POST',
+    headers: { "Content-type": "application/json; charset=UTF-8" },
+    body: JSON.stringify({}),
+  })
+    .then(res => res.json())
+    .then(response => { })
+    .catch(error => console.warn('Error:', error.message));
+
                 }
                 
   
@@ -85,6 +99,7 @@ class AddLab extends React.Component {
                     .then(res => res.json())
                     .then(response => { })
                     .catch(error => console.warn('Error:', error.message));
+                    this.updatecurrentnum();
                
                 this.showAlert2();
                        }
@@ -107,9 +122,9 @@ class AddLab extends React.Component {
     
     <View style={styles.form}>
   <Text style={styles.header}>טופס שיבוץ למעבדה</Text>
-  <Text style={styles.text1}>נושא המעבדה:</Text>
+  <Text style={styles.text}>נושא המעבדה:</Text>
   <Text style={styles.text10}>{this.params.Labtopic}</Text>
-  <Text style={styles.text1}>פרטי המעבדה:</Text>
+  <Text style={styles.text}>פרטי המעבדה:</Text>
   <Text style={styles.text11}>{this.params.Labdetails}</Text>
   <Text style={styles.text1}>תאריך המעבדה:</Text>
   <Text style={styles.text12}>{Moment(dt).format('DD/MM/YYYY')}</Text>
@@ -213,6 +228,15 @@ marginTop:30,
     writingDirection:'auto',
     left:100
   },
+  text: {
+    color: '#ffffff',
+    paddingBottom:10,  
+    position: 'relative',
+    top: -20,
+    fontSize: 20,
+    writingDirection:'auto',
+    left:105
+  },
   text10: {
     color: '#778899',
     paddingBottom:10,
@@ -220,7 +244,7 @@ marginTop:30,
     top: -20,
     fontSize: 18,
     writingDirection:'auto',
-    left:95
+    left:105
 
   },
   text11: {
@@ -230,7 +254,7 @@ marginTop:30,
     top:-20,
     fontSize: 18,
     writingDirection:'auto',
-    left:145
+    left:115
 
   },
   text12: {
@@ -271,7 +295,7 @@ marginTop:30,
     top: -20,
      fontSize: 18,
      writingDirection:'auto',
-     left:160
+     left:165
 
   },
   

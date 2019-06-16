@@ -228,11 +228,11 @@ checkifuserex(){
     const {showAlert3} = this.state;
   return(
     <View style={styles.form}>
-  <Text style={styles.header}>טופס סיום שאלון</Text>
+  <Text style={styles.header}>טופס סיום מחקר</Text>
  
-<TextInput style={styles.textinput} value={this.state.surveyId}  placeholder="מספר זיהוי שאלון " underlineColorAndroid={'transparent'} onChangeText={(surveyId) => this.setState({surveyId})}/>
-<TextInput style={styles.textinput} value={this.state.vercode} placeholder="קוד סיום שאלון" underlineColorAndroid={'transparent'} onChangeText={(vercode) => this.setState({ vercode })}/>
-<TextInput style={styles.textinput} value={this.state.time} placeholder="זמן מענהד " underlineColorAndroid={'transparent'} onChangeText={(time) => this.setState({ time })}/>
+<TextInput style={styles.textinput} value={this.state.surveyId}  placeholder="מספר זיהוי מחקר " underlineColorAndroid={'transparent'} onChangeText={(surveyId) => this.setState({surveyId})}/>
+<TextInput style={styles.textinput} value={this.state.vercode} placeholder="קוד סיום מחקר" underlineColorAndroid={'transparent'} onChangeText={(vercode) => this.setState({ vercode })}/>
+<TextInput style={styles.textinput} value={this.state.time} placeholder="זמן מענה " underlineColorAndroid={'transparent'} onChangeText={(time) => this.setState({ time })}/>
 
 <Button
                 buttonStyle={styles.button}
@@ -244,7 +244,7 @@ checkifuserex(){
           show={showAlert}
           showProgress={false}
           title="אופס!"
-          message="קוד אימות שאלון אינו מתאים לשאלון זה"
+          message="קוד אימות מחקר אינו מתאים מחקר זה"
           closeOnTouchOutside={true}
           closeOnHardwareBackPress={false}
           titleStyle={{color:'red'}}

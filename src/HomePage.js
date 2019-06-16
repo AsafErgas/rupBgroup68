@@ -64,7 +64,7 @@ import {NavigationEvents} from 'react-navigation';
             {this.props.item.Details}
           </Text>
 
-          <Text style={styles.Panel_text2}> משקל שאלון - {this.props.item.Surveyweight}</Text>
+          <Text style={styles.Panel_text2}> משקל מחקר - {this.props.item.Surveyweight}</Text>
           
           <Button
                 buttonStyle={styles.button}
@@ -275,7 +275,7 @@ export default class App extends Component {
      {
          
          apples: this.state.amount,
-         bananas: 10-this.state.amount,
+         bananas: 600-this.state.amount,
         
      }
  ]
@@ -303,8 +303,8 @@ export default class App extends Component {
           style={{left:152,width:200}}
         >
 
-          <MenuItem style ={styles.tab} onPress={this.hideMenu} onPress={this.GoSurveyHistory} >היסטורית שאלונים</MenuItem>
-          <MenuItem style ={styles.tab} onPress={this.hideMenu} onPress={this.GoSurveyFinish} >טופס סיום שאלון</MenuItem>
+          <MenuItem style ={styles.tab} onPress={this.hideMenu} onPress={this.GoSurveyHistory} >היסטורית מחקרים</MenuItem>
+          <MenuItem style ={styles.tab} onPress={this.hideMenu} onPress={this.GoSurveyFinish} >טופס סיום מחקר</MenuItem>
           <MenuItem style ={styles.tab} onPress={this.hideMenu} onPress={this.GoLabs} >שיבוץ למעבדות</MenuItem> 
           <MenuItem style ={styles.tab} onPress={this.hideMenu} onPress={this.GoScan} >סריקה</MenuItem> 
           <MenuItem style ={styles.tab} onPress={this.logout}>התנתק מהמערכת</MenuItem>
@@ -329,7 +329,7 @@ export default class App extends Component {
                 horizontal={true}
                 contentInset={ { top: 30, bottom: 30 } }
             ></StackedBarChart>
-<Text style ={styles.statustext2}>סה"כ שעות שבוצעו {this.state.amount} מתוך 10 </Text>
+<Text style ={styles.statustext2}>סה"כ דקות שבוצעו {this.state.amount} מתוך 600 </Text>
 <Text style ={styles.hometext2}>סקרים פתוחים:</Text>
 
 <View style={styles.MainContainer}>

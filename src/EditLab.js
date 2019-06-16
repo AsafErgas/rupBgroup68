@@ -150,7 +150,21 @@ class EditLab extends React.Component {
                           }
                         });
                            } 
-                     }                 
+                     }
+                     
+                     currentnumdown=(index)=>{
+                      const array3 = this.state.Labs[index]
+                      const Lid = array3.LabId
+                      fetch('http://proj.ruppin.ac.il/bgroup68/test1/tar4/api/currentnumdown?lid='+Lid, {
+  
+                        method: 'POST',
+                        headers: { "Content-type": "application/json; charset=UTF-8" },
+                        body: JSON.stringify({}),
+                      })
+                        .then(res => res.json())
+                        .then(response => {console.log(response); })
+                        .catch(error => console.warn('Error:', error.message));
+                     }
  
 
     update_Layout2 = (index) => {
@@ -168,6 +182,8 @@ class EditLab extends React.Component {
       .then(res => res.json())
       .then(response => { })
       .catch(error => console.warn('Error:', error.message));
+      this.currentnumdown(index);
+
 this.showAlert();
     
     
