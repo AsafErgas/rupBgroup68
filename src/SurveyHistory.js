@@ -51,12 +51,20 @@ class Accordion_Panel extends React.Component {
  
         <TouchableOpacity  activeOpacity={0.7} onPress={this.props.onClickFunction} style={styles.Btn}>
  
-          <Text style={styles.Panel_Button_Text}>{this.props.item.SurveyId} </Text>
+          <Text style={styles.Panel_Button_Text}>{this.props.item.Topic} </Text>
  
         </TouchableOpacity>
  
         <View style={{ height: this.state.updated_Height, overflow: 'hidden' }}>
  
+        <Text style={styles.Panel_text}>
+ 
+פרטים: {this.props.item.Det}
+
+
+</Text>
+
+
           <Text style={styles.Panel_text}>
  
            משקל: {this.props.item.Surveyweight}

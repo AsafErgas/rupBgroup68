@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { StyleSheet} from 'react-native';
 import HomePage from './src/HomePage.js';
@@ -12,6 +11,7 @@ import LabsSceduling from './src/LabsScheduling';
 import UpdateLab from './src/UpdateLab';
 import AddLab from './src/AddLab';
 import EditLab from './src/EditLab';
+
 class App extends React.Component {
 
   render() {
@@ -41,6 +41,7 @@ const AppNavigator = createStackNavigator(
     UpdateLab:UpdateLab,
     AddLab : AddLab,
     EditLab:EditLab,
+   
   }
  
 );
